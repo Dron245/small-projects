@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
-import { Success } from './components/Success';
-import { Users } from './components/Users';
+import { Success } from './components-inner/Succes.jsx';
+import { Users } from './components-inner/Users/Users.jsx';
 
 // Тут список пользователей: https://reqres.in/api/users
 

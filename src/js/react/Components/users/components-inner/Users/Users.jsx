@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const User = () => (
+export const Users = () => (
   <li>
     <div>
       <img className="avatar" src="https://reqres.in/img/faces/1-image.jpg" alt="User" />
