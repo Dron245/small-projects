@@ -7,7 +7,7 @@ const App = () => {
 		<>
 			{/* <Counter/> */}
 			{/* <Modal/> */}
-			<Qiuz/>
+			{/* <Qiuz/> */}
 		</>
 	)
 }
