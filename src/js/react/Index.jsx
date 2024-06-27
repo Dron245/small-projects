@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 
 
+
 // Объект для вывода
 const root = document.querySelector("#root")
 	? document.querySelector("#root")
@@ -11,7 +12,7 @@ const root = document.querySelector("#root")
 
 // Main rendering
 ReactDOM.createRoot(root).render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>
+	// <React.StrictMode>
+		<App/>
+	// </React.StrictMode>
 );
