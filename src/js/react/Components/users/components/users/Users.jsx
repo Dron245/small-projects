@@ -5,12 +5,8 @@ import { Skeleton } from "./Sceleton.jsx";
 export const Users = ({ items, isLoading, searchValue, inputSearch, buttonSendInvite, addInvite, invite, invited }) => {
 	const filteredItems = items.filter( item => {
 		const name = item.first_name + item.last_name
-		if (name.toLowerCase().includes(searchValue.toLowerCase()) || 
-			item.email.toLowerCase().includes(searchValue.toLowerCase())) {
-			return true
-		} else {
-			return false
-		}
+		return name.toLowerCase().includes(searchValue.toLowerCase()) || 
+				item.email.toLowerCase().includes(searchValue.toLowerCase())
 		}
 	)
 		
@@ -31,11 +27,11 @@ export const Users = ({ items, isLoading, searchValue, inputSearch, buttonSendIn
 				</div>
 			) : (
 				<ul className="users-list">
-					{filteredItems.map((item, index) => (
+					{filteredItems.map((item) => (
 						<User 
-						addInvite ={addInvite}
-						key={index} 
+						key={item.id} 
 						{...item} 
+						addInvite ={addInvite}
 						invited= {invited}
 						/>
 					))}

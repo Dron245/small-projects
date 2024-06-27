@@ -9,50 +9,14 @@ function App() {
 
 	const [items, setItems] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
-	const [isloading, setIsloading] = useState(false);
+	const [isloading, setIsloading] = useState(true);
 	const [invite, setInvite] = useState([])
 	const [sendInvite, setSendInvite] = useState(false)
-	const [count, setCount] = useState(0)
-	// const [invited, setInvited] = useState(false)
-	let invited = false
-	const inputSearch = (e) => {
-		// console.log(e.target.value);
-		setSearchValue(e.target.value)
-	}
-	console.log(invite);
-	const buttonSendInvite = () => {
-		setSendInvite(true)
-	}
 
-	// setFavorites(prev => prev.filter(item => Number(item.parendId) !== Number(obj.id)))
 
-	const addInvite =  (id) => {
-		if (invite.find(_id => _id === id)) {
-			console.log(1);
-			setInvite(prew => prew.filter( _id => _id !==id))
-			// setInvited(false)
-			invited=false
-			setCount(count -1)
-		} else {
-			console.log(2);
-			setInvite(prew => [...prew, id])
-			// setInvited(true)
-			invited=true
-			setCount(count +1)
-		}
-		
-	}
-
-	// const invited = (id) => {
-	// 	return items.some(item => item.id !== id)
-	// }
-	const changeCount = () => {
-
-	}
 	useEffect(() => {
 		async function fethdata() {
 			try {
-				setIsloading(true)
 				const resp = await axios.get('https://reqres.in/api/users')
 				setItems(resp.data.data)
 				setIsloading(false)
@@ -62,8 +26,29 @@ function App() {
 			}
 		}
 		fethdata()
-	}
+		}
 	,[])
+
+	const inputSearch = (e) => {
+		setSearchValue(e.target.value)
+	}
+	const buttonSendInvite = () => {
+		setSendInvite(true)
+	}
+
+	const addInvite =  (id) => {
+		if (invite.find(_id => _id === id)) {
+			setInvite(prew => prew.filter( _id => _id !==id))
+		} else {
+			setInvite(prew => [...prew, id])
+		}
+	}
+
+	const invited = (id) => {
+		
+		return invite.some(_id => _id === id)
+	}
+	
 
 	return (
 		<div className="Appu">
@@ -79,7 +64,7 @@ function App() {
 				/> :
 				<Success 
 				setSendInvite={setSendInvite} 
-				count={count}/>
+				count={invite.length}/>
 				}
 			
 		</div>

@@ -4,7 +4,7 @@ export function User({id, avatar, first_name, last_name, email, addInvite, invit
 	
 	const addPlus = () => {
 		addInvite(id)
-		// setInvited(true)
+		invited(id)
 	}
 
 	return (
@@ -21,8 +21,7 @@ export function User({id, avatar, first_name, last_name, email, addInvite, invit
 				</p>
 			</div>
 		</div>
-		<img onClick={addPlus} className="action" src={`img/${!invited ? "plus" : "minus"}.svg`} alt="Action" />
-		{/* {console.log(invited)} */}
+		<img onClick={addPlus} className="action" src={`img/${!invited(id) ? "plus" : "minus"}.svg`} alt="Action" />
 	</li>
 	)
 
