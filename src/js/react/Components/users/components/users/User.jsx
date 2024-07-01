@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 export function User({id, avatar, first_name, last_name, email, addInvite, invited}) {
 	
-	const addPlus = () => {
-		addInvite(id)
-		invited(id)
-	}
+	// const addPlus = () => {
+	// 	addInvite(id)
+	// 	invited(id)
+	// }
 
 	return (
 		<li>
@@ -21,7 +21,7 @@ export function User({id, avatar, first_name, last_name, email, addInvite, invit
 				</p>
 			</div>
 		</div>
-		<img onClick={addPlus} className="action" src={`img/${!invited(id) ? "plus" : "minus"}.svg`} alt="Action" />
+		<img onClick={() => addInvite(id)} className="action" src={`img/${!invited ? "plus" : "minus"}.svg`} alt="Action" />
 	</li>
 	)
 

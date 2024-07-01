@@ -12,8 +12,7 @@ function App() {
 	const [isloading, setIsloading] = useState(true);
 	const [invite, setInvite] = useState([])
 	const [sendInvite, setSendInvite] = useState(false)
-
-
+	console.log(invite);
 	useEffect(() => {
 		async function fethdata() {
 			try {
@@ -37,7 +36,7 @@ function App() {
 	}
 
 	const addInvite =  (id) => {
-		if (invite.find(_id => _id === id)) {
+		if (invite.includes(id)) {
 			setInvite(prew => prew.filter( _id => _id !==id))
 		} else {
 			setInvite(prew => [...prew, id])
@@ -45,7 +44,6 @@ function App() {
 	}
 
 	const invited = (id) => {
-		
 		return invite.some(_id => _id === id)
 	}
 	

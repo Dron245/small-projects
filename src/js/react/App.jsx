@@ -3,7 +3,7 @@ import Counter from "./Components/counter/Counter.jsx"
 import Modal from "./Components/modal/App.jsx";
 import Qiuz from "./Components/quiz/App.jsx"
 import Users from "./Components/users/App.jsx"
-
+import Converter from "./Components/converter/App.jsx"
 import "./Components/users/index.scss"
 const App = () => {
 	return (
@@ -11,7 +11,8 @@ const App = () => {
 			{/* <Counter/> */}
 			{/* <Modal/> */}
 			{/* <Qiuz/> */}
-			<Users/>
+			{/* <Users/> */}
+			<Converter/>
 		</>
 	)
 }

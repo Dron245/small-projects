@@ -32,7 +32,7 @@ export const Users = ({ items, isLoading, searchValue, inputSearch, buttonSendIn
 						key={item.id} 
 						{...item} 
 						addInvite ={addInvite}
-						invited= {invited}
+						invited= {invite.includes(item.id)}
 						/>
 					))}
 				</ul>
