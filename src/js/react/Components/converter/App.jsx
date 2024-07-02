@@ -7,21 +7,24 @@ import axios from "axios";
 
 
 function App() {
-	const [list, setlist] = useState([])
-	const [curFrom, setCurFrom] = useState('rub')
-	const [curTo, setCurTo] = useState('usd')
-	const [inFrom, setInFrom] = useState(1) // значение в левом инпуте
-	const [inTo, setInTo] = useState(0)	// значение в правом инпуте
-	// console.log(inFrom);
+	const [rates, setrates] = useState([])
+	const [fromCurency, setfromCurency] = useState('rub')
+	const [toCurency, settoCurency] = useState('usd')
+	const [fromPrice, setfromPrice] = useState(1) // значение в левом инпуте
+	const [toPrice, settoPrice] = useState(0)	// значение в правом инпуте
+	// console.log(fromPrice);
 	// const ref = useRef({rub:85,usd:1,eur:95,gbp:101})
 	// const ref = useRef({})
 	useEffect(() => {
 		async function fethdata() {
 			try {
 				// ref.current = await axios.get('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json')
-				// ref.current = await axios.get('https://reqres.in/api/users')
 				const res = await axios.get('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json')
-				setlist(res.data.usd)
+				setrates(res.data.usd)
+				console.log(res.data.usd);
+				onChangeToPrice(1)
+				// console.log(ref.current.data.usd[fromCurency]);
+
 				// console.log(ref.current);
 			} catch (error) {
 				console.log(error);
@@ -29,43 +32,51 @@ function App() {
 			}
 		}
 		fethdata()
-		}
+
+		// fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json')
+		// .then((res) => res.json())
+		// .then((json)=>{
+		// 	ref.current=json
+		// 	console.log(ref.current);
+		// })
+		// .catch((error)=>{console.log(error); 
+		// 		console.log('error')})
+	}
 	,[])
-	console.log(list)
-	const onChangeFromValue = (value) => {
-		// const result = inFrom * ref.current.data.usd[curFrom]
-		// console.log(ref.current[curTo]);
-		// const result = (value / ref.current[curFrom]) * ref.current[curTo]
-		const result = (value / list[curFrom]) * list[curTo]
-		setInTo(result)
-		setInFrom(value)
+	// console.log(rates)
+	// console.log(ref.current)
+	const onChangeFromPrice = (value) => {
+		// const result = (value / ref.current[fromCurency]) * ref.current[toCurency]
+		const result = (value / rates[fromCurency]) * rates[toCurency]
+		settoPrice(result)
+		setfromPrice(value)
 	}
-	const onChangeToValue = (value) => {
-		// const result = (ref.current[curFrom] / ref.current[curTo]) * value
-		const result = (list[curFrom] / list[curTo]) * value
-		setInFrom(result)
-		setInTo(value)
+	const onChangeToPrice = (value) => {
+		// const result1 = (ref.current[fromCurency] / ref.current[toCurency]) * value
+		const result1 = (rates[fromCurency] / rates[toCurency]) * value
+		setfromPrice(result1)
+		settoPrice(value)
 	}
 
 	useEffect(() => {
-		onChangeFromValue(inFrom)
-	}, [curTo]);
+		onChangeFromPrice(fromPrice)
+	}, [fromCurency, fromPrice]);
 
 	useEffect(() => {
-		onChangeToValue(inTo)
-	}, [curFrom]);
+		onChangeToPrice(toPrice)
+	}, [toCurency, toPrice]);
   return (
     <div className="Appc">
       <Block 
-		value={inFrom} 
-		currency={curFrom} 
-		onChangeValue={onChangeFromValue} 
-		onChangeCurrency={(cur) =>setCurFrom(cur)} />
+		value={fromPrice} 
+		currency={fromCurency} 
+		onChangeValue={onChangeFromPrice} 
+		onChangeCurrency={(cur) =>setfromCurency(cur)} />
       <Block 
-		value={inTo} 
-		currency={curTo} 
-		onChangeValue={onChangeToValue} 
-		onChangeCurrency={(cur) =>setCurTo(cur)} />
+		value={toPrice} 
+		currency={toCurency} 
+		onChangeValue={onChangeToPrice} 
+		onChangeCurrency={(cur) =>settoCurency(cur)} />
     </div>
   );
 }
