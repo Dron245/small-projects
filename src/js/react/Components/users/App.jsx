@@ -36,6 +36,7 @@ function App() {
 	}
 
 	const addInvite =  (id) => {
+		console.log(id);
 		if (invite.includes(id)) {
 			setInvite(prew => prew.filter( _id => _id !==id))
 		} else {
