@@ -21,7 +21,6 @@ function App() {
 				setIsloading(false)
 			} catch (error) {
 				console.log(error);
-				// alert('Не удалось выполнить запрос')
 			}
 		}
 		fethdata()

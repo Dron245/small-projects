@@ -15,8 +15,8 @@ const App = () => {
 			{/* <Qiuz/> */}
 			{/* <Users/> */}
 			{/* <Converter/> */}
-			{/* <Photos /> */}
-			<Todo/>
+			<Photos />
+			{/* <Todo/> */}
 		</>
 	)
 }
