@@ -7,7 +7,8 @@ import Converter from "./Components/converter/App.jsx"
 import Photos from "./Components/photos/App.jsx"
 import Todo from "./Components/todo/App.jsx"
 import Accordion from "./Components/accordion//App.jsx"
-import "./Components/users/index.scss"
+import Randomcolor from "./Components/randomcolor/App.jsx"
+// import "./Components/users/index.scss"
 const App = () => {
 	return (
 		<>
@@ -18,7 +19,8 @@ const App = () => {
 			{/* <Converter/> */}
 			{/* <Photos /> */}
 			{/* <Todo/> */}
-			<Accordion/>
+			{/* <Accordion/> */}
+			<Randomcolor/>
 		</>
 	)
 }

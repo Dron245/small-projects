@@ -1,71 +1,59 @@
-//single selection
-//multiple selection
+/** @format */
 
 import React, { useState } from 'react';
-import data from "./data";
-import "./index.css";
+import data from './data.js';
+import './index.scss';
+import Item from './components/Item.jsx';
 
-export default function App() {
-	const [selected, setSelected] = useState(null);
-	const [enableMultiSelection, setEnableMultiSelection] = useState(false);
-	const [multiple, setMultiple] = useState([]);
+const Accordion = () => {
+	const [select, setselect] = useState(null);
+	const [single, setSingle] = useState(true);
+	const [multi, setMulti] = useState([]);
+	const openSingle = (id) => {
+		setselect(select === id ? null : id);
+	};
 
-	function handleSingleSelection(getCurrentId) {
-		setSelected(getCurrentId === selected ? null : getCurrentId);
-	}
+	const openMulti = (id) => {
+		let copy = [...multi];
+		const del = copy.indexOf(id)
 
-	function handleMultiSelection(getCurrentId) {
-		let cpyMutiple = [...multiple];
-		console.log(cpyMutiple);
-		const findIndexOfCurrentId = cpyMutiple.indexOf(getCurrentId);
+		if (copy.indexOf(id) === -1) copy.push(id)
+		else copy.splice(del, 1)
+		setMulti(copy);
+	};
 
-		console.log(findIndexOfCurrentId);
-		if (findIndexOfCurrentId === -1) cpyMutiple.push(getCurrentId);
-		else cpyMutiple.splice(findIndexOfCurrentId, 1);
+	const changeOpen = () => {
+		setSingle(!single);
+	};
 
-		setMultiple(cpyMutiple);
-		// console.log(cpyMutiple);
-
-	}
-
-	console.log(selected, multiple);
+	console.log(select, multi);
 	return (
-		<div className="acc-wrapper">
-			<button onClick={() => setEnableMultiSelection(!enableMultiSelection)}>
-				{!enableMultiSelection ? 'Включить мультиоткрытие' : 'Выключить мультиоткрытие'}
-			</button>
-			<div className="accordian">
-				{data && data.length > 0 ? (
-					data.map((dataItem) => (
-						<div key={dataItem.id} className="item">
-							<div
-								onClick={
-									enableMultiSelection
-										? () => handleMultiSelection(dataItem.id)
-										: () => handleSingleSelection(dataItem.id)
-								}
-								className="title">
-								<h3>{dataItem.question}</h3>
-								<span>+</span>
-							</div>
-							{enableMultiSelection
-								? multiple.indexOf(dataItem.id) !== -1 && (
-										<div className="acc-content ">{dataItem.answer}</div>
-									)
-								: selected === dataItem.id && (
-										<div className="acc-content ">{dataItem.answer}</div>
-									)}
-							{/* {selected === dataItem.id ||
-              multiple.indexOf(dataItem.id) !== -1 ? (
-					<div className="content">{dataItem.answer}</div>
-					) : null} */}
-						</div>
-					))
-				) : (
-					<div>No data found !</div>
-				)}
-
+		<div className='accordion'>
+			<div className='accordion__wrapper'>
+				<button onClick={changeOpen} className='accordion__button'>
+					{single ? 'Одиночное открытие' : 'Мульти открытие'}
+				</button>
+				<div className='accordion__items'>
+					{data && data.length > 0 ? (
+						data.map((item) => (
+							<Item
+							key={item.id}
+							// item={item}
+							openSingle={openSingle}
+							openMulti={openMulti}
+							select={select}
+							single={single}
+							multi={multi}
+							{...item}
+							/>
+						))
+					) : (
+						<div>Нет спойлеров </div>
+					)}
+				</div>
 			</div>
 		</div>
 	);
-}
+};
+
+export default Accordion;
