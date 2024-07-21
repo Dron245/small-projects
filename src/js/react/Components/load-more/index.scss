@@ -1,0 +1,48 @@
+.container {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.load {
+	margin-inline: auto;
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 100px;
+}
+.list {
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	gap: 40px;
+	margin-bottom: 40px;
+}
+
+.item {
+	text-align: center;
+}
+
+.title {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.cost {
+	font-size: 18px;
+}
+
+.img {
+	width: 200px;
+}
+
+.button {
+	margin-inline: auto;
+	font-size: 22px;
+	font-weight: 600;
+	background-color: wheat;
+	padding: 30px;
+	border-radius: 20px;
+	&[disabled] {
+		display: none;
+	}
+}

@@ -10,6 +10,7 @@ import Accordion from "./Components/accordion//App.jsx"
 import Randomcolor from "./Components/randomcolor/App.jsx"
 import Star from "./Components/star-raitng/Star.jsx";
 import Slider from "./Components/slider/Slider.jsx";
+import Load from "./Components/load-more/Load.jsx";
 // import "./Components/users/index.scss"
 const App = () => {
 	return (
@@ -24,7 +25,8 @@ const App = () => {
 			{/* <Accordion/> */}
 			{/* <Randomcolor/> */}
 			{/* <Star/> */}
-			<Slider/>
+			{/* <Slider/> */}
+			<Load/>
 		</>
 	)
 }
