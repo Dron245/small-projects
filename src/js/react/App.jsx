@@ -11,6 +11,7 @@ import Randomcolor from "./Components/randomcolor/App.jsx"
 import Star from "./Components/star-raitng/Star.jsx";
 import Slider from "./Components/slider/Slider.jsx";
 import Load from "./Components/load-more/Load.jsx";
+import ThreeMenu from "./Components//threemenu/ThreeMenu.jsx"
 // import "./Components/users/index.scss"
 const App = () => {
 	return (
@@ -26,7 +27,8 @@ const App = () => {
 			{/* <Randomcolor/> */}
 			{/* <Star/> */}
 			{/* <Slider/> */}
-			<Load/>
+			{/* <Load/> */}
+			<ThreeMenu/>
 		</>
 	)
 }
