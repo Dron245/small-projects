@@ -1,41 +1,40 @@
-import { useState } from "react";
-import MenuList from "./menu-list.jsx";
-import {FaMinus, FaPlus} from 'react-icons/fa'
-import React from 'react'
-{
-	let qwe = 5
-	let asd =!qwe
-	console.log(asd)
-}
-export default function MenuItem({ item }) {
-  const [displayCurrentChildren, setDisplayCurrentChildren] = useState({});
+import React, { useState } from 'react'
+import MenuList from './menu-list.jsx'
+import { FaPlus, FaMinus } from 'react-icons/fa'
 
-  function handleToggleChildren(getCurrentlabel) {
-	  console.log(displayCurrentChildren[getCurrentlabel])
-    setDisplayCurrentChildren({
-      ...displayCurrentChildren,
-      [getCurrentlabel]: !displayCurrentChildren[getCurrentlabel],
-	});
-  }
+const menuItem = ({item}) => {
 
-  console.log(displayCurrentChildren);
+	const [current, setCurrent] = useState({})
 
+	function openSubMenu(getCurrent) {
+		setCurrent(
+			{...current,
+			[getCurrent]: !current[getCurrent]}
+		)
+	}
+	console.log(current)
   return (
-    <li>
-      <div className="menu-item">
-        <p>{item.label}</p>
-        {item && item.children && item.children.length ? (
-          <span onClick={() => handleToggleChildren(item.label)}>
-            {
-                displayCurrentChildren[item.label] ? <FaMinus color="#fff" size={25} /> : <FaPlus color="#fff" size={25} />
-            }
-          </span>
-        ) : null}
-      </div>
-
-      {item && item.children && item.children.length > 0 && displayCurrentChildren[item.label] ? (
-        <MenuList  list={item.children} />
-      ) : null}
-    </li>
-  );
+	 <li className="menu-item">
+		<div className="menu-item__wrapper">
+			<p>{item.label}</p>
+		{item && item.children ? 
+		<span onClick={()=>openSubMenu(item.label)}>
+			{
+				
+				current[item.label] ? <FaMinus color='white' size={20}/> :
+				<FaPlus color='white' size={20}/>
+			}
+		</span> : null }
+		</div>
+		{
+			item && item.children && current[item.label] ? 
+			<MenuList
+			menu = {item.children}
+			/>
+			: null
+		}
+	 </li>
+  )
 }
+
+export default menuItem

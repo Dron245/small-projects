@@ -1,11 +1,16 @@
-import MenuItem from "./menu-item.jsx";
 import React from 'react'
-export default function MenuList({ list }) {
+import MenuItem from './menu-item.jsx'
+const MenuList = ({menu}) => {
   return (
-    <ul className="menu-list-container">
-      {list && list.length
-        ? list.map((listItem, i) => <MenuItem key={i} item={listItem} />)
-        : null}
-    </ul>
-  );
+	 <ul className='menulist'>
+		{menu.map((item, i) => (
+			<MenuItem 
+			key={i}
+			item={item}
+			/>
+		))}
+	 </ul>
+  )
 }
+
+export default MenuList

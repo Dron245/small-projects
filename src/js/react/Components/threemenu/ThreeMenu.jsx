@@ -1,11 +1,20 @@
 import React from 'react'
-import MenuList from "./menu-list.jsx";
-import './index.scss'
 import data from './data.js'
-export default function TreeView({ menus = data }) {
+
+import './index.scss'
+
+import MenuList from './menu-list.jsx'
+
+const ThreeMenu = () => {
+
   return (
-    <div className="tree-view-container">
-      <MenuList list={menus} />
-    </div>
-  );
+	 <div className='Threecontainer'>
+		{<MenuList
+		menu = {data}
+		/>}
+		
+	 </div>
+  )
 }
+
+export default ThreeMenu
