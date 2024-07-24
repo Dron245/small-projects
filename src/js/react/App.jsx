@@ -12,7 +12,7 @@ import Star from "./Components/star-raitng/Star.jsx";
 import Slider from "./Components/slider/Slider.jsx";
 import Load from "./Components/load-more/Load.jsx";
 import ThreeMenu from "./Components//threemenu/ThreeMenu.jsx"
-// import "./Components/users/index.scss"
+import Theme from "./Components/theme/Theme.jsx";
 const App = () => {
 	return (
 		<>
@@ -28,7 +28,8 @@ const App = () => {
 			{/* <Star/> */}
 			{/* <Slider/> */}
 			{/* <Load/> */}
-			<ThreeMenu/>
+			{/* <ThreeMenu/> */}
+			<Theme/>
 		</>
 	)
 }
