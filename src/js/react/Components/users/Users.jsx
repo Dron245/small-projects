@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./index.scss";
+import "./users.scss";
 import { Success } from "./components/Succes.jsx";
 import { Users } from "./components/users/Users.jsx";
 import axios from "axios";
@@ -35,18 +35,12 @@ function App() {
 	}
 
 	const addInvite =  (id) => {
-		console.log(id);
 		if (invite.includes(id)) {
 			setInvite(prew => prew.filter( _id => _id !==id))
 		} else {
 			setInvite(prew => [...prew, id])
 		}
 	}
-
-	const invited = (id) => {
-		return invite.some(_id => _id === id)
-	}
-	
 
 	return (
 		<div className="Appu">
@@ -58,13 +52,13 @@ function App() {
 				buttonSendInvite={buttonSendInvite}
 				invite= {invite}
 				addInvite={addInvite}
-				invited={invited}
 				/> :
 				<Success 
 				setSendInvite={setSendInvite} 
-				count={invite.length}/>
+				count={invite.length}
+				items={items.length}
+				/>
 				}
-			
 		</div>
 	);
 }

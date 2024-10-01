@@ -11,8 +11,7 @@ export const Users = ({
 	inputSearch,
 	buttonSendInvite,
 	addInvite,
-	invite,
-	invited,
+	invite
 }) => {
 	const filteredItems = items.filter((item) => {
 		const name = item.first_name + item.last_name;

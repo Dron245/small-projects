@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.scss';
+import './styleQuiz.scss';
 
 const questions = [
   {
@@ -53,6 +53,7 @@ function Game({step,question, changeStep}) {
 function App() {
 
 	const [step, setstep] = useState(0)
+	console.log(step);
 	const [correct, setCorrect] = useState(0)
 	const question = questions[step]
 	const changeStep = (index) => {
@@ -63,6 +64,7 @@ function App() {
 	}
   return (
     <div className="Appq">
+		{console.log(questions.length)}
        {questions.length !== step ? 
 		 <Game step={step} question={question} changeStep={changeStep} /> :
 		 <Result correct={correct} />}

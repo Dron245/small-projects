@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-import "./style.scss"
+import "./styleCounter.scss"
 
 export default function Counter () {
 const [value, setvalue] = useState(0)
@@ -13,8 +13,9 @@ const fminus = () => {
 	else return
 }
 const fplus = () => {
-	setvalue(value +1)
+	 setvalue(value +1)
 }
+
 
 	return (
 		<main className="main">

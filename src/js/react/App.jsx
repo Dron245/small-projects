@@ -1,17 +1,17 @@
 import React from "react";
 import Counter from "./Components/counter/Counter.jsx"
-import Modal from "./Components/modal/App.jsx";
-import Qiuz from "./Components/quiz/App.jsx"
-import Users from "./Components/users/App.jsx"
+import Modal from "./Components/modal/Modal.jsx";
+import Qiuz from "./Components/quiz/Quiz.jsx"
+import Users from "./Components/users/Users.jsx"
 import Converter from "./Components/converter/App.jsx"
 import Photos from "./Components/photos/App.jsx"
 import Todo from "./Components/todo/App.jsx"
-import Accordion from "./Components/accordion//App.jsx"
+import Accordion from "./Components/accordion/App.jsx"
 import Randomcolor from "./Components/randomcolor/App.jsx"
 import Star from "./Components/star-raitng/Star.jsx";
 import Slider from "./Components/slider/Slider.jsx";
 import Load from "./Components/load-more/Load.jsx";
-import ThreeMenu from "./Components//threemenu/ThreeMenu.jsx"
+import ThreeMenu from "./Components/threemenu/ThreeMenu.jsx"
 import Theme from "./Components/theme/Theme.jsx";
 import ProgressScroll from "./Components/progress-scroll/ProgressScroll.jsx";
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
 			{/* <Counter/> */}
 			{/* <Modal/> */}
 			{/* <Qiuz/> */}
-			{/* <Users/> */}
+			<Users/>
 			{/* <Converter/> */}
 			{/* <Photos /> */}
 			{/* <Todo/> */}
@@ -31,7 +31,7 @@ const App = () => {
 			{/* <Load/> */}
 			{/* <ThreeMenu/> */}
 			{/* <Theme/> */}
-			<ProgressScroll/>
+			{/* <ProgressScroll/> */}
 		</>
 	)
 }
