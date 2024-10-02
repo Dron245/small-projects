@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from 'react';
-import './index.scss';
+import './photo.scss';
 import Collection from './components/Collection.jsx';
 import axios from 'axios';
 
@@ -18,7 +18,7 @@ function App() {
 				const categ = categories ? `&category=${categories}` : '';
 				setIsLoading(true);
 				const res = await axios.get(
-					`https://66853f80b3f57b06dd4bf714.mockapi.io/photos?p=${page}&l=2${categ}&`
+					`https://66853f80b3f57b06dd4bf714.mockapi.io/photos?p=${page}&l=3${categ}`
 				);
 				setCollections(res.data);
 				setIsLoading(false);
@@ -30,7 +30,7 @@ function App() {
 		fethdata();
 	}, [categories, page]);
 	return (
-		<div className='App'>
+		<div className='AppP'>
 			<h1>Моя коллекция фотографий</h1>
 			<div className='top'>
 				<ul className='tags'>

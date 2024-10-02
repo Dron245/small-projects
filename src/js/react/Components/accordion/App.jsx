@@ -2,13 +2,15 @@
 
 import React, { useState } from 'react';
 import data from './data.js';
-import './index.scss';
+import './accordion.scss';
 import Item from './components/Item.jsx';
 
 const Accordion = () => {
 	const [select, setselect] = useState(null);
 	const [single, setSingle] = useState(true);
 	const [multi, setMulti] = useState([]);
+	console.log(select, multi);
+
 	const openSingle = (id) => {
 		setselect(select === id ? null : id);
 	};
@@ -26,7 +28,6 @@ const Accordion = () => {
 		setSingle(!single);
 	};
 
-	console.log(select, multi);
 	return (
 		<div className='accordion'>
 			<div className='accordion__wrapper'>

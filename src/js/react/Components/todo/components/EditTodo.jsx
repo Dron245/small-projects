@@ -27,7 +27,6 @@ const EditTodo = ({ id, editTodo, inputValue }) => {
 			</button>
 			</form>
 		</>
-		// </li>
 	);
 };
 

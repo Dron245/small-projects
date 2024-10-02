@@ -20,11 +20,11 @@ const App = () => {
 			{/* <Counter/> */}
 			{/* <Modal/> */}
 			{/* <Qiuz/> */}
-			<Users/>
+			{/* <Users/> */}
 			{/* <Converter/> */}
 			{/* <Photos /> */}
 			{/* <Todo/> */}
-			{/* <Accordion/> */}
+			<Accordion/>
 			{/* <Randomcolor/> */}
 			{/* <Star/> */}
 			{/* <Slider/> */}

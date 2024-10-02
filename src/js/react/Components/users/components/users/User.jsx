@@ -1,3 +1,5 @@
+import React from "react"
+
 export function User({id, avatar, first_name, last_name, email, addInvite, invited}) {
 	
 	return (

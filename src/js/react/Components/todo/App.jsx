@@ -42,7 +42,7 @@ const App = () => {
 	const compliteF = (id) => {
 		settodos(
 			todos.map(todo => todo.id === id ?
-				{...todo, complite:!todo.complite} : todo)
+				{...todo, complite:!todo.complite } : todo)
 		);
 	};
 
