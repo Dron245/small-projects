@@ -9,7 +9,7 @@ const Theme = () => {
 	console.log(theme);
 	function changeTheme () {
 		settheme(prew=> {
-			const newTheme = prew==='light' ? 'dark' : 'light'
+			const newTheme = prew ==='light' ? 'dark' : 'light'
 			localStorage.setItem("theme", JSON.stringify(newTheme))
 			return newTheme
 		}

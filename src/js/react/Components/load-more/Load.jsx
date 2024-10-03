@@ -10,7 +10,7 @@ const Load = () => {
 		async function fethData() {
 			try {
 				setloading(true)
-				const { data } = await axios.get(`https://dummyjson.com/products?limit=${limit}&skip=40&delay=100`);
+				const { data } = await axios.get(`https://dummyjson.com/products?limit=${limit}&skip=0&delay=100`);
 				setImages(data.products);
 				console.log(data);
 				setloading(false)

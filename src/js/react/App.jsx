@@ -24,13 +24,13 @@ const App = () => {
 			{/* <Converter/> */}
 			{/* <Photos /> */}
 			{/* <Todo/> */}
-			<Accordion/>
+			{/* <Accordion/> */}
 			{/* <Randomcolor/> */}
 			{/* <Star/> */}
 			{/* <Slider/> */}
 			{/* <Load/> */}
 			{/* <ThreeMenu/> */}
-			{/* <Theme/> */}
+			<Theme/>
 			{/* <ProgressScroll/> */}
 		</>
 	)

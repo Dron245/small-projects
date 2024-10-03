@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
-import './index.scss';
+import './star.scss';
 import { useState } from 'react';
 
 const Star = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./index.scss";
+import "./randomColor.scss";
 const App = () => {
 	const [type, setType] = useState('hex');
 	const [color, setcolor] = useState("#000000");
@@ -18,7 +18,7 @@ const App = () => {
 			}
 			setcolor(hexResult)
 		} else if (type==='rgb') {
-			const r = random(256);
+			const r = random(2);
 			const g = random(256);
 			const b = random(256);
 			setcolor(`#${r}${g}${b}`)

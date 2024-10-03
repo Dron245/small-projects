@@ -17,14 +17,13 @@ const menuItem = ({item}) => {
 	 <li className="menu-item">
 		<div className="menu-item__wrapper">
 			<p>{item.label}</p>
-		{item && item.children ? 
-		<span onClick={()=>openSubMenu(item.label)}>
+			{item && item.children ? 
+			<span onClick={()=>openSubMenu(item.label)}>
 			{
-				
-				current[item.label] ? <FaMinus color='white' size={20}/> :
-				<FaPlus color='white' size={20}/>
+				current[item.label] ? <FaMinus color='red' size={20}/> :
+				<FaPlus color='red' size={20}/>
 			}
-		</span> : null }
+			</span> : null }
 		</div>
 		{
 			item && item.children && current[item.label] ? 

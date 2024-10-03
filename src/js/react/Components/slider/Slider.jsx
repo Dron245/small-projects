@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { FaArrowLeft, FaArrowRight} from "react-icons/fa";
-import './index.scss'
+import './slider.scss'
 import Slide from './Components/Slide.jsx'
 const Slider = () => {
 
