@@ -18,6 +18,8 @@ function App() {
 			try {
 				const resp = await axios.get('https://reqres.in/api/users')
 				setItems(resp.data.data)
+				console.log(resp.data.data);
+				
 				setIsloading(false)
 			} catch (error) {
 				console.log(error);

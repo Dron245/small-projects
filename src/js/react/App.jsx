@@ -14,6 +14,7 @@ import Load from "./Components/load-more/Load.jsx";
 import ThreeMenu from "./Components/threemenu/ThreeMenu.jsx"
 import Theme from "./Components/theme/Theme.jsx";
 import ProgressScroll from "./Components/progress-scroll/ProgressScroll.jsx";
+import Tabs from "./Components/Tabs/Tabs.jsx"
 const App = () => {
 	return (
 		<>
@@ -30,8 +31,9 @@ const App = () => {
 			{/* <Slider/> */}
 			{/* <Load/> */}
 			{/* <ThreeMenu/> */}
-			<Theme/>
+			{/* <Theme/> */}
 			{/* <ProgressScroll/> */}
+			<Tabs/>
 		</>
 	)
 }
