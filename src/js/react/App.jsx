@@ -15,6 +15,7 @@ import ThreeMenu from "./Components/threemenu/ThreeMenu.jsx"
 import Theme from "./Components/theme/Theme.jsx";
 import ProgressScroll from "./Components/progress-scroll/ProgressScroll.jsx";
 import Tabs from "./Components/Tabs/Tabs.jsx"
+import Github from "./Components/github/index.jsx";
 const App = () => {
 	return (
 		<>
@@ -33,7 +34,8 @@ const App = () => {
 			{/* <ThreeMenu/> */}
 			{/* <Theme/> */}
 			{/* <ProgressScroll/> */}
-			<Tabs/>
+			{/* <Tabs/> */}
+			<Github/>
 		</>
 	)
 }
