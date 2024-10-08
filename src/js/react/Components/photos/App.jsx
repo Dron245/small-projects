@@ -12,6 +12,7 @@ function App() {
 	const [categories, setcategories] = useState(0);
 	const [isLoading, setIsLoading] = useState(true);
 	const [page, setPage] = useState(1);
+	console.log(searchValue);
 	useEffect(() => {
 		async function fethdata() {
 			try {
@@ -29,6 +30,11 @@ function App() {
 		}
 		fethdata();
 	}, [categories, page]);
+
+	function search(e) {
+		setSearchValue(e.target.value)
+		console.log(searchValue);
+	}
 	return (
 		<div className='AppP'>
 			<h1>Моя коллекция фотографий</h1>
@@ -46,7 +52,7 @@ function App() {
 				</ul>
 				<input
 					value={searchValue}
-					onChange={(e) => setSearchValue(e.target.value)}
+					onChange={search}
 					className='search-input'
 					placeholder='Поиск по названию'
 				/>

@@ -16,6 +16,7 @@ import Theme from "./Components/theme/Theme.jsx";
 import ProgressScroll from "./Components/progress-scroll/ProgressScroll.jsx";
 import Tabs from "./Components/Tabs/Tabs.jsx"
 import Github from "./Components/github/index.jsx";
+import Dropmenu from "./Components/dropmenu/Dropmenu.jsx";
 const App = () => {
 	return (
 		<>
@@ -35,7 +36,8 @@ const App = () => {
 			{/* <Theme/> */}
 			{/* <ProgressScroll/> */}
 			{/* <Tabs/> */}
-			<Github/>
+			{/* <Github/> */}
+			<Dropmenu/>
 		</>
 	)
 }
